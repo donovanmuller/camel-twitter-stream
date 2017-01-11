@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: ${project.artifactId}
+
+# tweaks for stream application
+server:
+  tomcat:
+    max-threads: 2
