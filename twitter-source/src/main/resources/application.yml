@@ -1,0 +1,12 @@
+# how often to check for retweets
+twitter:
+  pollPeriod: 30s
+
+spring:
+  application:
+    name: ${project.artifactId}
+
+# tweaks for stream application
+server:
+  tomcat:
+    max-threads: 2
