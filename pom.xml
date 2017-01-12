@@ -49,7 +49,7 @@
             <dependency>
                 <groupId>io.switchbit</groupId>
                 <artifactId>camel-spring-cloud-stream-starter</artifactId>
-                <version>0.10</version>
+                <version>0.11</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -72,6 +72,14 @@
     </build>
 
     <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>bintray-donovanmuller-switchbit-public</id>
+            <name>bintray</name>
+            <url>http://dl.bintray.com/donovanmuller/switchbit-public</url>
+        </repository>
         <repository>
             <snapshots>
                 <enabled>false</enabled>

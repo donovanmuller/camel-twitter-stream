@@ -32,6 +32,6 @@ public class TwitterSourceRoute extends RouteBuilder {
 				.to("bean:retweetService").split(body())
 				.idempotentConsumer(simple("${body}"), idempotentRepository)
 				.skipDuplicate(properties.getSkipDuplicate())
-				.log("Sending retweet: ${body}").to("direct:retweets");
+				.log("Received retweet from: @${body}").to("direct:retweets");
 	}
 }
