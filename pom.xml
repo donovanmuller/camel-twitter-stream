@@ -46,6 +46,11 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>io.switchbit</groupId>
+                <artifactId>camel-spring-cloud-stream-starter</artifactId>
+                <version>0.10</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
