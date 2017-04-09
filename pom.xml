@@ -26,7 +26,7 @@
     </modules>
 
     <properties>
-        <camel.version>2.18.1</camel.version>
+        <camel.version>2.18.3</camel.version>
         <docker.prefix>local</docker.prefix>
     </properties>
 
@@ -35,21 +35,21 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-stream-dependencies</artifactId>
-                <version>Brooklyn.SR1</version>
+                <version>Brooklyn.SR3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>1.4.3.RELEASE</version>
+                <version>1.5.2.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>io.switchbit</groupId>
                 <artifactId>camel-spring-cloud-stream-starter</artifactId>
-                <version>0.11</version>
+                <version>0.13</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -66,7 +66,7 @@
             <plugin>
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.19.0</version>
+                <version>0.20.0</version>
             </plugin>
         </plugins>
     </build>

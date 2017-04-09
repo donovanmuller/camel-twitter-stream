@@ -10,21 +10,48 @@ import io.switchbit.configuration.TwitterProperties;
 @Component
 public class TwitterSourceRoute extends RouteBuilder {
 
+	@Override
+	public void configure() throws Exception {
+		// if you retweet this tweet, we'll get it here
+		fromRetweets();
+
+		// then we'll send it over the 'output' channel
+		// using Spring Cloud Stream.
+		// With the new Camel Spring Cloud Stream component!
+		from("direct:retweets").to("scst:output");
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	private TwitterProperties properties;
 	private IdempotentRepository idempotentRepository;
 
 	public TwitterSourceRoute(TwitterProperties properties,
-			IdempotentRepository idempotentRepository) {
+							  IdempotentRepository idempotentRepository) {
 		this.properties = properties;
 		this.idempotentRepository = idempotentRepository;
 	}
 
-	@Override
-	public void configure() throws Exception {
-		fromRetweets();
-		from("direct:retweets").to("scst:output");
-
-	}
 
 	private ExpressionNode fromRetweets() {
 		return from("timer:pollRetweets?fixedRate=true&period={{twitter.pollPeriod}}")
